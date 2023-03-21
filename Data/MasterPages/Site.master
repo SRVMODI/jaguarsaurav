@@ -1,0 +1,247 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Data_MasterPages_SiteMenu" %>
+
+<!DOCTYPE html>
+
+<html>
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <%--<title><%= ConfigurationManager.AppSettings("Title").ToString().Trim()%></title>--%>
+    <title>Jaguar Trade Tool Dev</title>
+    <link href="Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="../../CSS/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="../../CSS/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../CSS/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="../../CSS/style.css" rel="stylesheet" type="text/css" />
+    <link href="../../CSS/header-menu.css" rel="stylesheet" type="text/css" />
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="../../Scripts/jquery-1.12.4.js" type="text/javascript"></script>
+    <script src="../../Scripts/popper.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-ui.js" type="text/javascript"></script>
+    <script src="../../Scripts/header-menu.js" type="text/javascript"></script>
+    <%--<script src="../../Scripts/validation.js" type="text/javascript"></script>--%>
+    <script type="text/javascript">
+        $(function () {
+            var marginTop = ($("nav.navbar").outerHeight());
+
+            $("img.bg-img").hide();
+            var $url = $("img.bg-img").attr("src");
+            $('.full-background').css('backgroundImage', 'url(' + $url + ')');
+
+            $('.main-box').css({
+                "min-height": $(window).height() - ($(".navbar").outerHeight() + 10),
+                "margin-top": marginTop,
+                "margin-right": "auto",
+                "margin-left": "auto"
+            });
+			$(".container").css({				
+                "max-width": "100%"
+			});
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        function fnSelect(ctrl) {
+            var LoginID = $("#ConatntMatter_hdnLoginID").val();
+            var HierId = $(ctrl).attr("hierid");
+            //  alert(HierId);
+            switch (HierId) {
+                case "10":
+                    parent.parent.window.location.href = "../EntryForms/BucketMstr.aspx";
+                    break;
+                case "7":
+                    parent.parent.window.location.href = "../MasterForms/frmRoleAddEdit.aspx";
+                    break;
+                case "8":
+                    parent.parent.window.location.href = "../MasterForms/frmUserAddEdit.aspx";
+                    break;
+                case "16":
+                    parent.parent.window.location.href = "../BrandMapping/frmGetBrandCategory.aspx";
+                    break;
+                case "18":
+                    parent.parent.window.location.href = "../EntryForms/Initiative.aspx";
+                    break;
+					case "19":
+                    parent.parent.window.location.href = "../EntryForms/InvoiceUpload.aspx";
+                    break;
+					case "20":
+                    parent.parent.window.location.href = "../EntryForms/ChannelSummaryUpload.aspx";
+                    break;
+					case "22":
+                    parent.parent.window.location.href = "../EntryForms/ChannelSummaryDownload.aspx";
+                    break;
+					case "24":
+                    parent.parent.window.location.href = "../EntryForms/InvoiceUpload.aspx";
+                    break;
+                    case "25":
+                    parent.parent.window.location.href = "../EntryForms/frmExtendCreationDate.aspx";
+                    break;
+					case "26":
+                    parent.parent.window.location.href = "../EntryForms/InitiativeReleased.aspx";
+                    break;
+					case "28":
+                    parent.parent.window.location.href = "../UploadPRDFile/frmUploadPRDMFile.aspx";
+                    break;
+                case "30":
+                    parent.parent.window.location.href = "../EntryForms/LeapWinITExtract.aspx?pg=2&ins=1";
+                    break;
+                case "31":
+                    parent.parent.window.location.href = "../EntryForms/LeapWinITExtract.aspx?pg=1&ins=1";
+                    break;
+                case "32":
+                    parent.parent.window.location.href = "../EntryForms/LeapWinITExtract.aspx?pg=1&ins=2";
+                    break;
+                case "33":
+                    parent.parent.window.location.href = "../EntryForms/LeapWinITExtract.aspx?pg=1&ins=3";
+                    break;
+                case "34":
+                    parent.parent.window.location.href = "../EntryForms/LeapWinITExtract.aspx?pg=1&ins=-1";
+                    break;
+                case "37":
+                    parent.parent.window.location.href = "../EntryForms/SBD.aspx";
+                    break;
+                case "38":
+                    parent.parent.window.location.href = "../EntryForms/SBDApproval.aspx";
+                    break;
+                case "39":
+                    parent.parent.window.location.href = "../EntryForms/SBDApproval.aspx";
+                    break;
+                case "40":
+                    parent.parent.window.location.href = "../EntryForms/Cluster.aspx";
+                    break;
+                case "41":
+                    parent.parent.window.location.href = "../EntryForms/AddRemoveProxyinBaseSBF.aspx?pg=1";
+                    break;
+                case "42":
+                    parent.parent.window.location.href = "../EntryForms/AddRemoveProxyinBaseSBF.aspx?pg=2";
+                    break;
+                case "43":
+                    parent.parent.window.location.href = "../EntryForms/MSnPtoSBDMapping.aspx";
+                    break;
+                case "44":
+                    parent.parent.window.location.href = "../EntryForms/SBDExtract.aspx";
+                    break;
+                case "45":
+                    parent.parent.window.location.href = "../EntryForms/SBDAsReleased.aspx";
+                    break;
+                case "47":
+                    parent.parent.window.location.href = "../EntryForms/FocusBrand.aspx";
+                    break;
+                case "48":
+                    parent.parent.window.location.href = "../EntryForms/FBCluster.aspx";
+                    break;
+                case "49":
+                    parent.parent.window.location.href = "../EntryForms/BrandSectorMapping.aspx";
+                    break;
+                case "50":
+                    parent.parent.window.location.href = "../EntryForms/FBApproval.aspx";
+                    break;
+                case "51":
+                    parent.parent.window.location.href = "../EntryForms/FBApproval.aspx";
+                    break;
+                case "52":
+                    parent.parent.window.location.href = "../EntryForms/FBAsReleased.aspx";
+                    break;
+                case "53":
+                    parent.parent.window.location.href = "../EntryForms/FBExtract.aspx";
+                    break;
+                case "54":
+                    parent.parent.window.location.href = "../EntryForms/BaseProxyCombiBucket.aspx";
+                    break;
+                case "55":
+                    parent.parent.window.location.href = "../EntryForms/ExtendCreationDateFB.aspx";
+                    break;
+                case "56":
+                    parent.parent.window.location.href = "../EntryForms/ExtendCreationDateSBD.aspx";
+                    break;
+                case "58":
+                    parent.parent.window.location.href = "../EntryForms/SWB.aspx";
+                    break;
+                case "59":
+                    parent.parent.window.location.href = "../EntryForms/SWBExtract.aspx";
+                    break;
+                case "60":
+                    parent.parent.window.location.href = "../EntryForms/FBExtractTopSKU.aspx";
+                    break;
+                case "61":
+                    parent.parent.window.location.href = "../EntryForms/ExtendCreationDateSWB.aspx";
+                    break;
+                case "62":
+                    parent.parent.window.location.href = "../EntryForms/SBDExtractInLeap.aspx";
+                    break;
+                case "63":
+                    parent.parent.window.location.href = "../EntryForms/RemovedSBDs.aspx";
+                    break;
+                case "64":
+                    parent.parent.window.location.href = "../EntryForms/RemovedINITs.aspx";
+                    break;
+                case "65":
+                    parent.parent.window.location.href = "../EntryForms/RemovedFBs.aspx";
+                    break;
+                case "66":
+                    parent.parent.window.location.href = "../EntryForms/FocusBrandTopup.aspx";
+                    break;
+                default:
+                    alert("Comming Soon");
+                    break;
+            }
+        }
+    </script>
+    <!-- For All Device Jquery -->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+        </asp:ScriptManager>
+        <div class="full-background">
+            <img src="../../Images/login-bg.jpg" class="bg-img" />
+        </div>
+        <nav class="navbar fixed-top shadow-sm navbar-head">
+            <div class="container">
+                <div class="d-flex w-100 h-66">
+                    <asp:Image ID="imgLogo1" runat="server" ImageUrl="~/Images/p_g-logo.png" alt="RRD Logo" class="logo" />
+                    <div class="d-flex ml-auto">
+                        <div class="d-block">
+                            <ul class="user_nav text-right">
+                                <li>
+                                    <asp:Label ID="lblUserName" runat="server" Class="font-weight-bold"></asp:Label>
+                                    &nbsp; &nbsp;</li>
+                                <%-- <li><a href="../Other/Option.aspx" class="btn fa fa-home"></a></li>--%>
+                                <li><a href="../Other/frmDashboard.aspx" class="btn">
+                                    <img src="../../Images/Home.png" /></a></li>
+                                <li><a href="../../frmLogin.aspx" class="btn">
+                                    <img src="../../Images/Logout.png" /></a></li>
+                            </ul>
+
+                            <div id='cssmenu'>
+                                <ul id="TabHead" runat="server">
+                                </ul>                                
+                            </div>
+                        </div>
+                        <div class="d-block">
+                            <asp:Image ID="imgLogo2" runat="server" ImageUrl="~/Images/JaguarLogo_w.png" alt="RRD Logo" class="logo_sec" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid" style='padding-left: 8px; padding-right: 8px;'>
+            <div class="container main-box clearfix">
+                <asp:ContentPlaceHolder ID="ConatntMatter" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+
+        <asp:HiddenField ID="hdnLoginID" runat="server" />
+    </form>
+</body>
+</html>
